@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+    float weight, consumed, need;
+    int activity, climate;
+    
+    printf("Enter your weight (kg): ");
+    scanf("%f", &weight);
+    
+    printf("Are you physically active? (1=Yes,0=No): ");
+    scanf("%d", &activity);
+    
+    
+    printf("Enter water consumed today (ml): ");
+    scanf("%f", &consumed);
+    
+    // Base need: 35 ml per kg
+    need = weight * 35;
+    if(activity) need += 500;
+    if(climate) need += 500;
+    
+    if(consumed < need)
+        printf("You should drink %.2f ml more water today.\n", need - consumed);
+    else
+        printf("Goal achieved! You drank enough water today.\n");
+    
+    return 0;
+}
+
+
+
+
